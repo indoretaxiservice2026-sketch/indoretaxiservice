@@ -1,971 +1,1549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Indore Taxi Service | Airport Cab & Outstation Taxi</title>
-
-    <meta name="description" content="Book reliable taxi service in Indore for airport pickup, local sightseeing, one way and round trips. Call Indore Taxi Service now.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --yellow: #ffc107;
-            --dark: #111827;
-            --blue: #0d6efd;
-            --light: #f5f7fb;
-            --white: #ffffff;
-            --green: #25d366;
-        }
-
-        body {
-            background: var(--white);
-            color: #222;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .top-bar {
-            background: var(--dark);
-            color: white;
-            padding: 9px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-        }
-
-        .top-bar a {
-            color: white;
-            margin-left: 15px;
-        }
-
-        header {
-            background: white;
-            padding: 15px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--dark);
-        }
-
-        .logo span {
-            color: var(--yellow);
-        }
-
-        nav a {
-            color: var(--dark);
-            margin-left: 24px;
-            font-weight: 600;
-            font-size: 15px;
-        }
-
-        nav a:hover {
-            color: var(--blue);
-        }
-
-        .menu-button {
-            display: none;
-            font-size: 27px;
-            cursor: pointer;
-        }
-
-        .hero {
-            min-height: 630px;
-            padding: 70px 7%;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            align-items: center;
-            gap: 45px;
-            background:
-                linear-gradient(90deg, rgba(7, 18, 40, 0.94), rgba(7, 18, 40, 0.65)),
-                url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1600&q=80");
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero-text {
-            color: white;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            background: var(--yellow);
-            color: #111;
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 49px;
-            line-height: 1.2;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 span {
-            color: var(--yellow);
-        }
-
-        .hero-text p {
-            font-size: 17px;
-            line-height: 1.8;
-            max-width: 650px;
-            margin-bottom: 28px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .button {
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            padding: 14px 23px;
-            border-radius: 7px;
-            font-size: 15px;
-            font-weight: 700;
-        }
-
-        .call-button {
-            background: var(--yellow);
-            color: #111;
-        }
-
-        .whatsapp-button {
-            background: var(--green);
-            color: white;
-        }
-
-        .booking-box {
-            background: white;
-            padding: 28px;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .booking-box h2 {
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-
-        .booking-box p {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .form-group {
-            margin-bottom: 14px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d1d5db;
-            border-radius: 7px;
-            outline: none;
-            font-size: 14px;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: var(--blue);
-        }
-
-        .booking-button {
-            width: 100%;
-            background: var(--blue);
-            color: white;
-            margin-top: 5px;
-        }
-
-        section {
-            padding: 75px 7%;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 42px;
-        }
-
-        .section-heading span {
-            color: var(--blue);
-            font-weight: 700;
-        }
-
-        .section-heading h2 {
-            font-size: 35px;
-            color: var(--dark);
-            margin-top: 6px;
-        }
-
-        .section-heading p {
-            color: #666;
-            max-width: 680px;
-            margin: 10px auto 0;
-        }
-
-        .services {
-            background: var(--light);
-        }
-
-        .service-grid,
-        .route-grid,
-        .car-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px 24px;
-            border-radius: 12px;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
-        }
-
-        .service-card:hover {
-            transform: translateY(-7px);
-        }
-
-        .service-card i {
-            width: 70px;
-            height: 70px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #fff5d7;
-            color: #e0a800;
-            border-radius: 50%;
-            font-size: 29px;
-            margin-bottom: 17px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .service-card p {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        .route-card {
-            border-radius: 13px;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.09);
-        }
-
-        .route-card img {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-        }
-
-        .route-content {
-            padding: 20px;
-        }
-
-        .route-content h3 {
-            color: var(--dark);
-            margin-bottom: 7px;
-        }
-
-        .route-content p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .route-content a {
-            color: var(--blue);
-            font-weight: 700;
-        }
-
-        .cars {
-            background: var(--light);
-        }
-
-        .car-card {
-            background: white;
-            padding: 25px;
-            border-radius: 13px;
-            text-align: center;
-            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
-        }
-
-        .car-card i {
-            font-size: 70px;
-            color: var(--blue);
-            margin-bottom: 15px;
-        }
-
-        .car-card h3 {
-            color: var(--dark);
-            font-size: 22px;
-        }
-
-        .car-card p {
-            color: #666;
-            margin: 8px 0 16px;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .features-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .features-text h2 {
-            font-size: 36px;
-            color: var(--dark);
-            margin-bottom: 18px;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .feature-item i {
-            min-width: 45px;
-            height: 45px;
-            background: var(--yellow);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #111;
-        }
-
-        .feature-item h3 {
-            color: var(--dark);
-            margin-bottom: 4px;
-        }
-
-        .feature-item p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .contact-section {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            font-size: 37px;
-            margin-bottom: 12px;
-        }
-
-        .contact-section p {
-            margin-bottom: 25px;
-            color: #d1d5db;
-        }
-
-        footer {
-            background: #070c16;
-            color: #cbd5e1;
-            text-align: center;
-            padding: 25px 7%;
-            font-size: 14px;
-        }
-
-        .floating-call,
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 25px;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .floating-call {
-            left: 20px;
-            background: var(--blue);
-        }
-
-        .floating-whatsapp {
-            right: 20px;
-            background: var(--green);
-        }
-
-        @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 39px;
-            }
-
-            .service-grid,
-            .route-grid,
-            .car-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 15px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            }
-
-            nav.active {
-                display: block;
-            }
-
-            nav a {
-                display: block;
-                margin: 12px;
-            }
-
-            .menu-button {
-                display: block;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .top-bar {
-                justify-content: center;
-            }
-
-            .top-bar div:first-child {
-                display: none;
-            }
-
-            .hero {
-                padding: 55px 5%;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-text p {
-                font-size: 15px;
-            }
-
-            section {
-                padding: 60px 5%;
-            }
-
-            .service-grid,
-            .route-grid,
-            .car-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-heading h2,
-            .features-text h2,
-            .contact-section h2 {
-                font-size: 29px;
-            }
-
-            .booking-box {
-                padding: 22px 17px;
-            }
-        }
-        
-.logo img {
-    width: 190px;
-    height: 70px;
-    object-fit: contain;
-    display: block;
-}
-
-@media (max-width: 600px) {
-    .logo img {
-        width: 145px;
-        height: 55px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Indore Taxi Service | Local, Airport & Outstation Cab</title>
+  <meta name="description" content="Book Indore taxi service for local travel, airport pickup, Ujjain, Omkareshwar, Maheshwar, Mandu, Dewas, Bhopal and outstation trips. Call or WhatsApp 9770582434.">
+  <meta name="theme-color" content="#07172b">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --navy: #07172b;
+      --navy-2: #0c2544;
+      --yellow: #ffc400;
+      --yellow-dark: #e6ad00;
+      --green: #20bf6b;
+      --text: #101828;
+      --muted: #667085;
+      --light: #f5f7fb;
+      --white: #ffffff;
+      --border: #e4e7ec;
+      --shadow: 0 14px 40px rgba(7, 23, 43, 0.12);
     }
-}
-        
-    </style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin-inline: auto;
+    }
+
+    .topbar {
+      background: #03101f;
+      color: #dbe7f3;
+      font-size: 13px;
+    }
+
+    .topbar-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .topbar a:hover {
+      color: var(--yellow);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 23, 43, 0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo-wrap {
+      width: 190px;
+      min-width: 160px;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 66px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .logo-fallback {
+      display: none;
+      color: white;
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .logo-fallback span {
+      color: var(--yellow);
+      font-size: 12px;
+      letter-spacing: 1.6px;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .main-nav a {
+      color: #f8fafc;
+      font-size: 14px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: var(--yellow);
+      transition: width .25s ease;
+    }
+
+    .main-nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-call {
+      background: var(--yellow);
+      color: #07172b;
+      padding: 12px 18px;
+      border-radius: 9px;
+      font-weight: 800;
+      white-space: nowrap;
+      box-shadow: 0 8px 25px rgba(255, 196, 0, 0.22);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      color: white;
+      background: transparent;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      align-items: center;
+      position: relative;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg, rgba(3, 16, 31, .98) 0%, rgba(7, 23, 43, .84) 48%, rgba(7, 23, 43, .45) 100%),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/RAJWADA.jpg?width=1800") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(0deg, rgba(3,16,31,.35), transparent 45%);
+    }
+
+    .hero-grid {
+      padding: 72px 0;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--yellow);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero-copy > p {
+      color: #d6e0eb;
+      font-size: 17px;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 9px;
+      padding: 13px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--navy);
+      box-shadow: 0 10px 25px rgba(255,196,0,.22);
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.7);
+      background: rgba(255,255,255,.06);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .booking-card {
+      background: rgba(255,255,255,.98);
+      border-radius: 18px;
+      padding: 27px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.32);
+    }
+
+    .booking-card h2 {
+      color: var(--navy);
+      font-size: 25px;
+      margin-bottom: 3px;
+    }
+
+    .booking-card > p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #344054;
+      margin-bottom: 5px;
+    }
+
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      height: 45px;
+      border: 1px solid #d0d5dd;
+      border-radius: 8px;
+      padding: 0 12px;
+      outline: none;
+      background: white;
+      color: var(--text);
+    }
+
+    .form-field input:focus,
+    .form-field select:focus {
+      border-color: var(--yellow-dark);
+      box-shadow: 0 0 0 3px rgba(255,196,0,.16);
+    }
+
+    .booking-card .btn {
+      width: 100%;
+      margin-top: 14px;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-head .mini-title {
+      color: var(--yellow-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      margin: 5px 0 9px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
+    .services {
+      background: white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-item {
+      padding: 24px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 8px 24px rgba(7,23,43,.06);
+    }
+
+    .service-icon {
+      width: 51px;
+      height: 51px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #fff7d1;
+      color: #b78400;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .service-item h3 {
+      font-size: 17px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .service-item p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .fleet {
+      background: var(--light);
+    }
+
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .car-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(7,23,43,.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .car-photo {
+      height: 190px;
+      padding: 12px;
+      background: linear-gradient(180deg, #f9fbfd, #edf2f7);
+      overflow: hidden;
+    }
+
+    .car-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .car-content {
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .car-content h3 {
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .price {
+      color: var(--navy);
+      font-size: 30px;
+      font-weight: 800;
+      margin: 8px 0 12px;
+    }
+
+    .price span {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .car-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 10px;
+      color: #475467;
+      font-size: 12px;
+      padding: 13px 0;
+      border-top: 1px solid var(--border);
+      margin-bottom: 15px;
+    }
+
+    .car-features div {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .car-card .btn {
+      width: 100%;
+      margin-top: auto;
+      padding: 11px;
+    }
+
+    .fare-note {
+      margin: 24px auto 0;
+      max-width: 900px;
+      border: 1px solid #cbd5e1;
+      background: #eef4fb;
+      color: #344054;
+      border-radius: 999px;
+      text-align: center;
+      padding: 10px 18px;
+      font-size: 13px;
+    }
+
+    .destinations {
+      background: white;
+    }
+
+    .place-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .place-card {
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 9px 25px rgba(7,23,43,.08);
+      cursor: pointer;
+      transition: transform .24s ease, box-shadow .24s ease;
+    }
+
+    .place-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .place-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .place-info {
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .place-info h3 {
+      color: var(--navy);
+      font-size: 17px;
+    }
+
+    .place-info p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .place-arrow {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--yellow);
+      color: var(--navy);
+      flex: 0 0 36px;
+    }
+
+    .why-us {
+      background: var(--navy);
+      color: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,196,0,.55);
+      border-radius: 50%;
+      color: var(--yellow);
+      font-size: 21px;
+    }
+
+    .why-item h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .why-item p {
+      color: #c7d4e2;
+      font-size: 12px;
+    }
+
+    .contact {
+      background:
+        linear-gradient(rgba(7,23,43,.92), rgba(7,23,43,.92)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Upper%20Lake%2C%20Bhopal.jpg?width=1600") center/cover;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(31px, 4vw, 44px);
+      margin-bottom: 8px;
+    }
+
+    .contact p {
+      color: #d1dbe6;
+      margin-bottom: 24px;
+    }
+
+    .contact .hero-actions {
+      justify-content: center;
+    }
+
+    footer {
+      background: #020b15;
+      color: #aebdcd;
+      padding: 28px 0 84px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    .floating-action {
+      position: fixed;
+      bottom: 18px;
+      z-index: 1200;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 23px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    }
+
+    .floating-call {
+      left: 18px;
+      background: #1677ff;
+    }
+
+    .floating-whatsapp {
+      right: 18px;
+      background: var(--green);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      padding: 22px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(2,11,21,.78);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .car-modal {
+      width: min(920px, 100%);
+      max-height: 92vh;
+      overflow-y: auto;
+      background: white;
+      border-radius: 18px;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0,0,0,.38);
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: white;
+      color: var(--navy);
+      font-size: 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.15);
+      cursor: pointer;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      min-height: 510px;
+    }
+
+    .modal-image {
+      background: linear-gradient(145deg, #edf3f8, #ffffff);
+      padding: 38px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .modal-image img {
+      width: 100%;
+      max-height: 310px;
+      object-fit: contain;
+    }
+
+    .modal-image p {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    .modal-content {
+      padding: 42px 35px 32px;
+    }
+
+    .modal-content h2 {
+      color: var(--navy);
+      font-size: 31px;
+    }
+
+    .modal-price {
+      display: inline-block;
+      margin: 9px 0 15px;
+      background: var(--yellow);
+      color: var(--navy);
+      font-weight: 800;
+      padding: 7px 13px;
+      border-radius: 8px;
+    }
+
+    .modal-description {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .detail-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .detail-list li {
+      color: #344054;
+      font-size: 13px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .detail-list i {
+      color: var(--green);
+      margin-top: 4px;
+    }
+
+    .modal-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .modal-actions .btn {
+      width: 100%;
+    }
+
+    @media (max-width: 1050px) {
+      .main-nav {
+        gap: 15px;
+      }
+
+      .main-nav a {
+        font-size: 12px;
+      }
+
+      .service-grid,
+      .fleet-grid,
+      .place-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 840px) {
+      .topbar {
+        display: none;
+      }
+
+      .header-call {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 82px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 12px 5% 18px;
+        background: var(--navy);
+        border-top: 1px solid rgba(255,255,255,.08);
+      }
+
+      .main-nav.active {
+        display: flex;
+      }
+
+      .main-nav a {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 14px;
+      }
+
+      .main-nav a::after {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding: 58px 0;
+      }
+
+      .booking-card {
+        max-width: 620px;
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-image {
+        padding: 32px 24px 10px;
+      }
+
+      .modal-image img {
+        max-height: 230px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(92%, 1180px);
+      }
+
+      .header-inner {
+        min-height: 72px;
+      }
+
+      .logo-wrap {
+        width: 154px;
+      }
+
+      .logo-wrap img {
+        height: 55px;
+      }
+
+      .main-nav {
+        top: 72px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        padding: 46px 0;
+        gap: 34px;
+      }
+
+      .hero-copy > p {
+        font-size: 14px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .btn {
+        padding: 12px 13px;
+        font-size: 13px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .service-grid,
+      .fleet-grid,
+      .place-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .car-photo {
+        height: 230px;
+      }
+
+      .place-card img {
+        height: 210px;
+      }
+
+      .fare-note {
+        border-radius: 13px;
+      }
+
+      .modal-overlay {
+        padding: 10px;
+      }
+
+      .modal-content {
+        padding: 26px 22px;
+      }
+
+      .modal-content h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-    <div class="top-bar">
-        <div>
-            <i class="fa-solid fa-location-dot"></i>
-            Indore, Madhya Pradesh
-        </div>
-
-        <div>
-            <a href="tel:+919770582434">
-                <i class="fa-solid fa-phone"></i> +91 97705 82434
-            </a>
-        </div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div><i class="fa-solid fa-location-dot"></i> Indore, Madhya Pradesh</div>
+      <div>
+        <a href="tel:+919770582434"><i class="fa-solid fa-phone"></i> +91 97705 82434</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <span>24×7 Taxi Booking</span>
+      </div>
     </div>
+  </div>
 
-    <header>
-      <a href="#home" class="logo">
-    <img src="logo.png" alt="Indore Taxi Service Logo">
-</a> 
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo-wrap" aria-label="Indore Taxi Service home">
+        <img
+          src="logo.png.png"
+          alt="Indore Taxi Service"
+          data-fallback="0"
+          onerror="
+            if (this.dataset.fallback === '0') {
+              this.dataset.fallback = '1';
+              this.src = 'logo.png';
+            } else {
+              this.style.display = 'none';
+              this.nextElementSibling.style.display = 'block';
+            }
+          "
+        >
+        <span class="logo-fallback">Indore <span>Taxi Service</span></span>
+      </a>
 
-        <nav id="navigation">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#routes">Popular Routes</a>
-            <a href="#cars">Our Cars</a>
-            <a href="#contact">Contact</a>
-        </nav>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#fleet">Taxi Rates</a>
+        <a href="#places">Tourist Places</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-        <div class="menu-button" onclick="toggleMenu()">
-            <i class="fa-solid fa-bars"></i>
+      <a class="header-call" href="tel:+919770582434">
+        <i class="fa-solid fa-phone"></i> 9770582434
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <i class="fa-solid fa-taxi"></i>
+            Indore's Trusted Taxi Service
+          </div>
+
+          <h1>Your Journey,<br>Our <span>Responsibility</span></h1>
+
+          <p>
+            Safe, clean and affordable taxi service in Indore for airport pickup,
+            local travel, one-way trips and outstation journeys.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-yellow" href="tel:+919770582434">
+              <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+            <a class="btn btn-outline" target="_blank"
+               href="https://wa.me/919770582434?text=Hello%20Indore%20Taxi%20Service,%20I%20want%20to%20book%20a%20taxi.">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
         </div>
-    </header>
 
-    <main>
+        <div class="booking-card">
+          <h2>Book Your Taxi</h2>
+          <p>Fill your trip details. Booking will open directly on WhatsApp.</p>
 
-        <section class="hero" id="home">
+          <form id="bookingForm">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="customerName">Your name</label>
+                <input id="customerName" type="text" placeholder="Enter name" required>
+              </div>
 
-            <div class="hero-text">
-                <span class="hero-tag">
-                    Indore's Trusted Taxi Service
-                </span>
+              <div class="form-field">
+                <label for="customerPhone">Phone number</label>
+                <input id="customerPhone" type="tel" placeholder="10-digit number" required>
+              </div>
 
-                <h1>
-                    Safe and Affordable
-                    <span>Taxi Service in Indore</span>
-                </h1>
+              <div class="form-field full">
+                <label for="pickup">Pickup location</label>
+                <input id="pickup" type="text" placeholder="Pickup address" required>
+              </div>
 
-                <p>
-                    Book reliable airport pickup, local sightseeing, one-way taxi
-                    and outstation cab service from Indore. Clean cars, professional
-                    drivers and on-time pickup.
-                </p>
+              <div class="form-field full">
+                <label for="drop">Drop location</label>
+                <input id="drop" type="text" placeholder="Destination" required>
+              </div>
 
-                <div class="hero-buttons">
-                    <a class="button call-button" href="tel:+919770582434">
-                        <i class="fa-solid fa-phone"></i>
-                        Call Now
-                    </a>
+              <div class="form-field">
+                <label for="tripType">Trip type</label>
+                <select id="tripType">
+                  <option>One Way</option>
+                  <option>Round Trip</option>
+                  <option>Airport Pickup</option>
+                  <option>Airport Drop</option>
+                  <option>Indore Local</option>
+                </select>
+              </div>
 
-                    <a class="button whatsapp-button"
-                       href="https://wa.me/919770582434?text=Hello%20Ganesh%20Taxi%20Service,%20I%20want%20to%20book%20a%20taxi."
-                       target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        WhatsApp Booking
-                    </a>
-                </div>
+              <div class="form-field">
+                <label for="journeyDate">Journey date</label>
+                <input id="journeyDate" type="date" required>
+              </div>
             </div>
 
-            <div class="booking-box">
-                <h2>Book Your Taxi</h2>
-                <p>Enter your journey details. Booking will open on WhatsApp.</p>
+            <button class="btn btn-yellow" type="submit">
+              <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-                <form id="bookingForm">
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="mini-title">Our Services</div>
+          <h2>Reliable Taxi Service in Indore</h2>
+          <p>Book the right cab for your airport, local or outstation journey.</p>
+        </div>
 
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" id="name" placeholder="Enter your name" required>
-                    </div>
+        <div class="service-grid">
+          <article class="service-item">
+            <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <h3>Airport Transfer</h3>
+            <p>On-time Indore Airport pickup and drop with 24×7 booking support.</p>
+          </article>
 
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Enter phone number" required>
-                    </div>
+          <article class="service-item">
+            <div class="service-icon"><i class="fa-solid fa-road"></i></div>
+            <h3>Outstation Taxi</h3>
+            <p>One-way and round-trip cabs from Indore to nearby cities.</p>
+          </article>
 
-                    <div class="form-group">
-                        <label>Pickup Location</label>
-                        <input type="text" id="pickup" placeholder="Enter pickup location" required>
-                    </div>
+          <article class="service-item">
+            <div class="service-icon"><i class="fa-solid fa-city"></i></div>
+            <h3>Indore Local</h3>
+            <p>Local sightseeing, meetings, shopping and full-day cab service.</p>
+          </article>
 
-                    <div class="form-group">
-                        <label>Drop Location</label>
-                        <input type="text" id="drop" placeholder="Enter destination" required>
-                    </div>
+          <article class="service-item">
+            <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Corporate Travel</h3>
+            <p>Professional drivers and comfortable cars for business travel.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                    <div class="form-group">
-                        <label>Trip Type</label>
-                        <select id="tripType">
-                            <option>One Way Taxi</option>
-                            <option>Round Trip Taxi</option>
-                            <option>Airport Pickup</option>
-                            <option>Airport Drop</option>
-                            <option>Local Indore Taxi</option>
-                        </select>
-                    </div>
+    <section class="fleet" id="fleet">
+      <div class="container">
+        <div class="section-head">
+          <div class="mini-title">Our Fleet</div>
+          <h2>Taxi Rates (Outstation)</h2>
+          <p>Click “View Details” to see complete car information and booking options.</p>
+        </div>
 
-                    <div class="form-group">
-                        <label>Journey Date</label>
-                        <input type="date" id="journeyDate" required>
-                    </div>
-
-                    <button type="submit" class="button booking-button">
-                        Book on WhatsApp
-                    </button>
-
-                </form>
+        <div class="fleet-grid">
+          <article class="car-card">
+            <div class="car-photo">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Dzire%20VXi%20VVT%20%28front%29.JPG?width=900"
+                   alt="Sedan Dzire taxi" loading="lazy">
             </div>
-
-        </section>
-
-        <section class="services" id="services">
-
-            <div class="section-heading">
-                <span>OUR SERVICES</span>
-                <h2>Taxi Services Available in Indore</h2>
-                <p>
-                    Book a comfortable taxi for local travel, airport transfer and
-                    outstation journeys.
-                </p>
+            <div class="car-content">
+              <h3>Sedan / Dzire</h3>
+              <div class="price">₹11<span>/km</span></div>
+              <div class="car-features">
+                <div><i class="fa-solid fa-user"></i> 4 Seater</div>
+                <div><i class="fa-solid fa-suitcase"></i> 3 Bags</div>
+                <div><i class="fa-solid fa-gas-pump"></i> Petrol/Diesel</div>
+                <div><i class="fa-solid fa-snowflake"></i> AC</div>
+              </div>
+              <button class="btn btn-yellow" type="button" onclick="openCarModal('sedan')">
+                View Details
+              </button>
             </div>
+          </article>
 
-            <div class="service-grid">
-
-                <div class="service-card">
-                    <i class="fa-solid fa-plane-departure"></i>
-                    <h3>Airport Taxi</h3>
-                    <p>
-                        On-time pickup and drop service for Indore Airport at
-                        affordable prices.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-road"></i>
-                    <h3>Outstation Taxi</h3>
-                    <p>
-                        Comfortable one-way and round-trip taxi service from Indore
-                        to nearby cities.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-city"></i>
-                    <h3>Local Indore Taxi</h3>
-                    <p>
-                        Book a cab for Indore local sightseeing, business meetings
-                        and personal travel.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                    <h3>One Way Taxi</h3>
-                    <p>
-                        Pay only for your one-way journey with clean cars and
-                        experienced drivers.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-rotate"></i>
-                    <h3>Round Trip Taxi</h3>
-                    <p>
-                        Book an affordable round-trip cab with flexible pickup and
-                        return timings.
-                    </p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <h3>Corporate Taxi</h3>
-                    <p>
-                        Reliable taxi service for companies, office staff and
-                        business travellers.
-                    </p>
-                </div>
-
+          <article class="car-card">
+            <div class="car-photo">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Ertiga%283%29.jpg?width=900"
+                   alt="Ertiga taxi" loading="lazy">
             </div>
-        </section>
-
-        <section id="routes">
-
-            <div class="section-heading">
-                <span>POPULAR DESTINATIONS</span>
-                <h2>Popular Taxi Routes from Indore</h2>
-                <p>
-                    Travel to religious and tourist destinations with comfortable
-                    cabs and professional drivers.
-                </p>
+            <div class="car-content">
+              <h3>Ertiga</h3>
+              <div class="price">₹13<span>/km</span></div>
+              <div class="car-features">
+                <div><i class="fa-solid fa-user"></i> 6+1 Seater</div>
+                <div><i class="fa-solid fa-suitcase"></i> 4 Bags</div>
+                <div><i class="fa-solid fa-gas-pump"></i> Petrol/Diesel</div>
+                <div><i class="fa-solid fa-snowflake"></i> AC</div>
+              </div>
+              <button class="btn btn-yellow" type="button" onclick="openCarModal('ertiga')">
+                View Details
+              </button>
             </div>
+          </article>
 
-            <div class="route-grid">
-
-                <div class="route-card">
-                    <img src="https://images.unsplash.com/photo-1609920658906-8223bd289001?auto=format&fit=crop&w=900&q=80" alt="Indore to Ujjain taxi">
-
-                    <div class="route-content">
-                        <h3>Indore to Ujjain Taxi</h3>
-                        <p>
-                            Book a taxi for Mahakaleshwar Temple and Ujjain local
-                            sightseeing.
-                        </p>
-                        <a href="tel:+919770582434">Call for Fare →</a>
-                    </div>
-                </div>
-
-                <div class="route-card">
-                    <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=80" alt="Indore to Omkareshwar taxi">
-
-                    <div class="route-content">
-                        <h3>Indore to Omkareshwar Taxi</h3>
-                        <p>
-                            Comfortable cab service for Omkareshwar Jyotirlinga and
-                            nearby locations.
-                        </p>
-                        <a href="tel:+919770582434">Call for Fare →</a>
-                    </div>
-                </div>
-
-                <div class="route-card">
-                    <img src="https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=900&q=80" alt="Indore to Maheshwar taxi">
-
-                    <div class="route-content">
-                        <h3>Indore to Maheshwar Taxi</h3>
-                        <p>
-                            Book a cab for Maheshwar Fort, Narmada Ghat and local
-                            sightseeing.
-                        </p>
-                        <a href="tel:+919770582434">Call for Fare →</a>
-                    </div>
-                </div>
-
+          <article class="car-card">
+            <div class="car-photo">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%202.7V.jpg?width=900"
+                   alt="Toyota Innova taxi" loading="lazy">
             </div>
-        </section>
-
-        <section class="cars" id="cars">
-
-            <div class="section-heading">
-                <span>OUR FLEET</span>
-                <h2>Choose Your Comfortable Car</h2>
-                <p>
-                    Different car options are available according to your family
-                    size and travel requirements.
-                </p>
+            <div class="car-content">
+              <h3>Innova</h3>
+              <div class="price">₹17<span>/km</span></div>
+              <div class="car-features">
+                <div><i class="fa-solid fa-user"></i> 6+1 Seater</div>
+                <div><i class="fa-solid fa-suitcase"></i> 4 Bags</div>
+                <div><i class="fa-solid fa-gas-pump"></i> Diesel</div>
+                <div><i class="fa-solid fa-snowflake"></i> AC</div>
+              </div>
+              <button class="btn btn-yellow" type="button" onclick="openCarModal('innova')">
+                View Details
+              </button>
             </div>
+          </article>
 
-            <div class="car-grid">
-
-                <div class="car-card">
-                    <i class="fa-solid fa-car-side"></i>
-                    <h3>Sedan</h3>
-                    <p>Dzire / Etios — Up to 4 passengers</p>
-                    <a href="tel:+919770582434" class="button call-button">
-                        Check Price
-                    </a>
-                </div>
-
-                <div class="car-card">
-                    <i class="fa-solid fa-car"></i>
-                    <h3>SUV</h3>
-                    <p>Ertiga — Up to 6 passengers</p>
-                    <a href="tel:+919770582434" class="button call-button">
-                        Check Price
-                    </a>
-                </div>
-
-                <div class="car-card">
-                    <i class="fa-solid fa-van-shuttle"></i>
-                    <h3>Innova</h3>
-                    <p>Innova Crysta — Up to 7 passengers</p>
-                    <a href="tel:+919770582434" class="button call-button">
-                        Check Price
-                    </a>
-                </div>
-
+          <article class="car-card">
+            <div class="car-photo">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%20Crysta%202.4%20Z%20front%20right.jpg?width=900"
+                   alt="Toyota Innova Crysta taxi" loading="lazy">
             </div>
-        </section>
-
-        <section>
-
-            <div class="features">
-
-                <div class="features-image">
-                    <img src="https://images.unsplash.com/photo-1515569067071-ec3b51335dd0?auto=format&fit=crop&w=1000&q=80" alt="Professional taxi driver">
-                </div>
-
-                <div class="features-text">
-                    <h2>Why Choose Indore Taxi Service?</h2>
-
-                    <div class="feature-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <div>
-                            <h3>On-Time Pickup</h3>
-                            <p>
-                                Our drivers arrive on time so your journey starts
-                                without delay.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <i class="fa-solid fa-user-shield"></i>
-                        <div>
-                            <h3>Professional Drivers</h3>
-                            <p>
-                                Travel safely with experienced and responsible
-                                drivers.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>
-                        <div>
-                            <h3>Affordable Pricing</h3>
-                            <p>
-                                Transparent and competitive taxi fares without
-                                unnecessary charges.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <i class="fa-solid fa-headset"></i>
-                        <div>
-                            <h3>24×7 Booking Support</h3>
-                            <p>
-                                Call or WhatsApp us anytime to book your taxi.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="car-content">
+              <h3>Innova Crysta</h3>
+              <div class="price">₹17<span>/km</span></div>
+              <div class="car-features">
+                <div><i class="fa-solid fa-user"></i> 6+1 Seater</div>
+                <div><i class="fa-solid fa-suitcase"></i> 4 Bags</div>
+                <div><i class="fa-solid fa-gas-pump"></i> Diesel</div>
+                <div><i class="fa-solid fa-snowflake"></i> AC</div>
+              </div>
+              <button class="btn btn-yellow" type="button" onclick="openCarModal('crysta')">
+                View Details
+              </button>
             </div>
-        </section>
+          </article>
+        </div>
 
-        <section class="contact-section" id="contact">
-            <h2>Need a Taxi in Indore?</h2>
+        <div class="fare-note">
+          <i class="fa-solid fa-circle-info"></i>
+          Rates are starting outstation rates. Final fare, toll, parking and other applicable charges should be confirmed before booking.
+        </div>
+      </div>
+    </section>
 
-            <p>
-                Call or WhatsApp Indore Taxi Service for quick booking and
-                fare information.
-            </p>
+    <section class="destinations" id="places">
+      <div class="container">
+        <div class="section-head">
+          <div class="mini-title">Popular Outstation Destinations</div>
+          <h2>Explore Nearby Places</h2>
+          <p>Click any destination to send a direct WhatsApp enquiry.</p>
+        </div>
 
-            <div class="hero-buttons" style="justify-content:center;">
-                <a class="button call-button" href="tel:+919770582434">
-                    <i class="fa-solid fa-phone"></i>
-                    +91 97705 82434
-                </a>
-
-                <a class="button whatsapp-button"
-                   href="https://wa.me/919770582434?text=Hello%20Ganesh%20Taxi%20Service,%20I%20want%20to%20book%20a%20taxi."
-                   target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    Book on WhatsApp
-                </a>
+        <div class="place-grid">
+          <article class="place-card" onclick="bookPlace('Ujjain')" tabindex="0">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mahakaleshwar%20Temple%2C%20Ujjain.jpg?width=900"
+                 alt="Ujjain Mahakaleshwar Temple" loading="lazy">
+            <div class="place-info">
+              <div><h3>Ujjain</h3><p>Mahakaleshwar & local sightseeing</p></div>
+              <span class="place-arrow"><i class="fa-solid fa-arrow-right"></i></span>
             </div>
-        </section>
+          </article>
 
-    </main>
+          <article class="place-card" onclick="bookPlace('Omkareshwar')" tabindex="0">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Omkareshwar%20Temple.png?width=900"
+                 alt="Omkareshwar Temple" loading="lazy">
+            <div class="place-info">
+              <div><h3>Omkareshwar</h3><p>Jyotirlinga taxi from Indore</p></div>
+              <span class="place-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
 
-    <footer>
-        © 2026 Indore Taxi Service. All Rights Reserved.
-    </footer>
+          <article class="place-card" onclick="bookPlace('Maheshwar')" tabindex="0">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/MaheshwarFort.jpg?width=900"
+                 alt="Maheshwar Fort" loading="lazy">
+            <div class="place-info">
+              <div><h3>Maheshwar</h3><p>Fort, temple and Narmada Ghat</p></div>
+              <span class="place-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
 
-    <a class="floating-call" href="tel:+919770582434" aria-label="Call now">
-        <i class="fa-solid fa-phone"></i>
-    </a>
+          <article class="place-card" onclick="bookPlace('Mandu')" tabindex="0">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jahaz%20Mahal%2C%20Mandu%2C%20Madhya%20Pradesh.jpg?width=900"
+                 alt="Jahaz Mahal Mandu" loading="lazy">
+            <div class="place-info">
+              <div><h3>Mandu</h3><p>Jahaz Mahal and heritage tour</p></div>
+              <span class="place-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
 
-    <a class="floating-whatsapp"
-       href="https://wa.me/919770582434?text=Hello%20Ganesh%20Taxi%20Service,%20I%20want%20to%20book%20a%20taxi."
-       target="_blank"
-       aria-label="WhatsApp booking">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+          <article class="place-card" onclick="bookPlace('Dewas')" tabindex="0">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maa%20Tulja%20Bhawani%20Temple%2C%20Tekri%20Dewas.jpg?width=900"
+                 alt="Dewas Tekri Temple" loading="lazy">
+            <div class="place-info">
+              <div><h3>Dewas</h3><p>Tekri Mata Temple taxi</p></div>
+              <span class="place-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("navigation").classList.toggle("active");
+          <article class="place-card" onclick="bookPlace('Bhopal')" tabindex="0">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/UPPER%20LAKE.jpg?width=900"
+                 alt="Bhopal Upper Lake" loading="lazy">
+            <div class="place-info">
+              <div><h3>Bhopal</h3><p>One-way and round-trip taxi</p></div>
+              <span class="place-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="place-card" onclick="bookPlace('Patalpani')" tabindex="0">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Patalpani%20Waterfalls.jpg?width=900"
+                 alt="Patalpani Waterfall" loading="lazy">
+            <div class="place-info">
+              <div><h3>Patalpani</h3><p>Waterfall and local day trip</p></div>
+              <span class="place-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+
+          <article class="place-card" onclick="bookPlace('Indore Local Sightseeing')" tabindex="0">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAJWADA.jpg?width=900"
+                 alt="Rajwada Indore" loading="lazy">
+            <div class="place-info">
+              <div><h3>Indore Local</h3><p>Rajwada, Khajrana and city tour</p></div>
+              <span class="place-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us">
+      <div class="container why-grid">
+        <div class="why-item">
+          <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div><h3>Safe & Secure</h3><p>Clean cars and responsible drivers.</p></div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <div><h3>Affordable Price</h3><p>Clear pricing before your journey.</p></div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <div><h3>Experienced Drivers</h3><p>Professional and polite service.</p></div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon"><i class="fa-solid fa-clock"></i></div>
+          <div><h3>24×7 Availability</h3><p>Call or WhatsApp for quick booking.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Ready to Book Your Taxi?</h2>
+        <p>Contact Indore Taxi Service for fare details and fast booking.</p>
+        <div class="hero-actions">
+          <a class="btn btn-yellow" href="tel:+919770582434">
+            <i class="fa-solid fa-phone"></i> +91 97705 82434
+          </a>
+          <a class="btn btn-whatsapp" target="_blank"
+             href="https://wa.me/919770582434?text=Hello%20Indore%20Taxi%20Service,%20I%20want%20to%20book%20a%20taxi.">
+            <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Indore Taxi Service</strong> — Call/WhatsApp: 9770582434</p>
+      <p>© 2026 Indore Taxi Service. All rights reserved.</p>
+      <p>Car and destination photographs are served from Wikimedia Commons under their respective licences.</p>
+    </div>
+  </footer>
+
+  <a class="floating-action floating-call" href="tel:+919770582434" aria-label="Call Indore Taxi Service">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+
+  <a class="floating-action floating-whatsapp"
+     target="_blank"
+     href="https://wa.me/919770582434?text=Hello%20Indore%20Taxi%20Service,%20I%20want%20to%20book%20a%20taxi."
+     aria-label="WhatsApp Indore Taxi Service">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="modal-overlay" id="carModal" role="dialog" aria-modal="true" aria-labelledby="modalCarName">
+    <div class="car-modal">
+      <button class="modal-close" type="button" aria-label="Close details" onclick="closeCarModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-grid">
+        <div class="modal-image">
+          <img id="modalCarImage" src="" alt="">
+          <p>Vehicle image is representative. Actual vehicle may vary according to availability.</p>
+        </div>
+
+        <div class="modal-content">
+          <h2 id="modalCarName">Car Name</h2>
+          <div class="modal-price" id="modalCarPrice">₹0/km</div>
+          <p class="modal-description" id="modalCarDescription"></p>
+
+          <ul class="detail-list" id="modalCarFeatures"></ul>
+
+          <div class="modal-actions">
+            <a class="btn btn-yellow" href="tel:+919770582434">
+              <i class="fa-solid fa-phone"></i> Call 9770582434
+            </a>
+            <a class="btn btn-whatsapp" id="modalWhatsapp" href="#" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Book This Car
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const phoneNumber = "919770582434";
+
+    const cars = {
+      sedan: {
+        name: "Sedan / Dzire",
+        price: "₹11/km",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Dzire%20VXi%20VVT%20%28front%29.JPG?width=1200",
+        description: "Affordable and comfortable option for couples, small families, airport pickup and long-distance travel.",
+        features: [
+          "Up to 4 passengers",
+          "Space for approximately 3 bags",
+          "Air-conditioned vehicle",
+          "Suitable for one-way and round trips",
+          "Professional driver",
+          "Final fare confirmed before booking"
+        ]
+      },
+      ertiga: {
+        name: "Ertiga",
+        price: "₹13/km",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Ertiga%283%29.jpg?width=1200",
+        description: "A spacious family car for group travel, religious trips, airport transfer and outstation journeys.",
+        features: [
+          "Up to 6+1 passengers",
+          "Space for approximately 4 bags",
+          "Air-conditioned vehicle",
+          "Comfortable for family trips",
+          "Professional driver",
+          "Final fare confirmed before booking"
+        ]
+      },
+      innova: {
+        name: "Innova",
+        price: "₹17/km",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%202.7V.jpg?width=1200",
+        description: "A comfortable premium MUV for family tours, corporate travel and longer outstation journeys.",
+        features: [
+          "Up to 6+1 passengers",
+          "Space for approximately 4 bags",
+          "Air-conditioned vehicle",
+          "Suitable for long journeys",
+          "Professional driver",
+          "Final fare confirmed before booking"
+        ]
+      },
+      crysta: {
+        name: "Innova Crysta",
+        price: "₹17/km",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%20Crysta%202.4%20Z%20front%20right.jpg?width=1200",
+        description: "Premium comfort for family, business and long-distance travel with spacious seating and a smooth ride.",
+        features: [
+          "Up to 6+1 passengers",
+          "Space for approximately 4 bags",
+          "Air-conditioned vehicle",
+          "Premium outstation option",
+          "Professional driver",
+          "Final fare confirmed before booking"
+        ]
+      }
+    };
+
+    function toggleMenu() {
+      document.getElementById("mainNav").classList.toggle("active");
+    }
+
+    document.querySelectorAll("#mainNav a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("mainNav").classList.remove("active");
+      });
+    });
+
+    function openCarModal(carKey) {
+      const car = cars[carKey];
+      if (!car) return;
+
+      document.getElementById("modalCarName").textContent = car.name;
+      document.getElementById("modalCarPrice").textContent = car.price;
+      document.getElementById("modalCarImage").src = car.image;
+      document.getElementById("modalCarImage").alt = car.name + " taxi";
+      document.getElementById("modalCarDescription").textContent = car.description;
+
+      document.getElementById("modalCarFeatures").innerHTML = car.features
+        .map(feature => `<li><i class="fa-solid fa-check"></i><span>${feature}</span></li>`)
+        .join("");
+
+      const message = `Hello Indore Taxi Service, I want to book ${car.name} at ${car.price}. Please share complete fare details.`;
+      document.getElementById("modalWhatsapp").href =
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      document.getElementById("carModal").classList.add("active");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeCarModal() {
+      document.getElementById("carModal").classList.remove("active");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.getElementById("carModal").addEventListener("click", function(event) {
+      if (event.target === this) closeCarModal();
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closeCarModal();
+    });
+
+    function bookPlace(placeName) {
+      const message = `Hello Indore Taxi Service, I want to book a taxi from Indore to ${placeName}. Please share fare and car options.`;
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    }
+
+    document.querySelectorAll(".place-card").forEach(card => {
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          card.click();
         }
+      });
+    });
 
-        document.getElementById("bookingForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
 
-            const name = document.getElementById("name").value;
-            const phone = document.getElementById("phone").value;
-            const pickup = document.getElementById("pickup").value;
-            const drop = document.getElementById("drop").value;
-            const tripType = document.getElementById("tripType").value;
-            const journeyDate = document.getElementById("journeyDate").value;
+      const name = document.getElementById("customerName").value.trim();
+      const customerPhone = document.getElementById("customerPhone").value.trim();
+      const pickup = document.getElementById("pickup").value.trim();
+      const drop = document.getElementById("drop").value.trim();
+      const tripType = document.getElementById("tripType").value;
+      const journeyDate = document.getElementById("journeyDate").value;
 
-            const message =
-                "Hello Indore Taxi Service,%0A%0A" +
-                "I want to book a taxi.%0A" +
-                "Name: " + encodeURIComponent(name) + "%0A" +
-                "Phone: " + encodeURIComponent(phone) + "%0A" +
-                "Pickup: " + encodeURIComponent(pickup) + "%0A" +
-                "Drop: " + encodeURIComponent(drop) + "%0A" +
-                "Trip Type: " + encodeURIComponent(tripType) + "%0A" +
-                "Journey Date: " + encodeURIComponent(journeyDate);
+      const message =
+`Hello Indore Taxi Service,
 
-            window.open("https://wa.me/919770582434?text=" + message, "_blank");
-        });
-    </script>
+I want to book a taxi.
 
+Name: ${name}
+Phone: ${customerPhone}
+Pickup: ${pickup}
+Drop: ${drop}
+Trip Type: ${tripType}
+Journey Date: ${journeyDate}`;
+
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    });
+
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("journeyDate").min = today;
+  </script>
 </body>
 </html>
