@@ -535,6 +535,21 @@
                 padding: 22px 17px;
             }
         }
+        
+.logo img {
+    width: 190px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .logo img {
+        width: 145px;
+        height: 55px;
+    }
+}
+        
     </style>
 </head>
 
@@ -554,9 +569,9 @@
     </div>
 
     <header>
-        <div class="logo">
-            Indore <span>Taxi Service</span>
-        </div>
+      <a href="#home" class="logo">
+    <img src="logo.png" alt="Indore Taxi Service Logo">
+</a> 
 
         <nav id="navigation">
             <a href="#home">Home</a>
