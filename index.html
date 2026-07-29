@@ -122,7 +122,7 @@
     .car-photo:before{content:"";position:absolute;left:14px;right:14px;bottom:12px;height:18px;
       background:radial-gradient(ellipse at center, rgba(6,23,43,.18), rgba(6,23,43,0) 70%);
       filter:blur(4px)}
-    .car-photo img{width:100%;height:100%;object-fit:contain;border-radius:9px;
+    .car-photo img{width:100%;height:100%;object-fit:cover;border-radius:9px;
       filter:contrast(1.04) saturate(1.08) drop-shadow(0 12px 18px rgba(6,23,43,.16));
       transition:transform .35s ease, filter .35s ease}
     .car-card:hover .car-photo img{transform:scale(1.04);
@@ -444,7 +444,7 @@
         <div class="fleet-grid">
           <article class="car-card reveal" data-category="budget">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Dzire%20VXi%20VVT%20%28front%29.JPG?width=900" alt="Sedan Dzire taxi" loading="lazy">
+              <img src="dzire.jpg" alt="Sedan Dzire taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">Budget Sedan</span>
@@ -462,7 +462,7 @@
 
           <article class="car-card reveal" data-category="family">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Ertiga%283%29.jpg?width=900" alt="Ertiga taxi" loading="lazy">
+              <img src="ertiga.jpg" alt="Ertiga taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">Family MUV</span>
@@ -480,7 +480,7 @@
 
           <article class="car-card reveal" data-category="family">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%202.7V.jpg?width=900" alt="Toyota Innova taxi" loading="lazy">
+              <img src="innova.jpg" alt="Toyota Innova taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">Comfort MUV</span>
@@ -498,7 +498,7 @@
 
           <article class="car-card reveal" data-category="premium">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%20Crysta%202.4%20Z%20front%20right.jpg?width=900" alt="Innova Crysta taxi" loading="lazy">
+              <img src="crysta.jpg" alt="Innova Crysta taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">Premium MUV</span>
@@ -516,7 +516,7 @@
 
           <article class="car-card reveal" data-category="budget">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Wagon%20R%20VXi%20%282019%29.jpg?width=900" alt="WagonR taxi" loading="lazy">
+              <img src="wagonr.jpg" alt="WagonR taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">City Budget</span>
@@ -534,7 +534,7 @@
 
           <article class="car-card reveal" data-category="premium">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20City%20%282021%29%20front.jpg?width=900" alt="Honda City premium taxi" loading="lazy">
+              <img src="city.jpg" alt="Honda City premium taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">Premium Sedan</span>
@@ -552,7 +552,7 @@
 
           <article class="car-card reveal" data-category="family">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kia%20Carens%20%282022%29%20front.jpg?width=900" alt="Kia Carens taxi" loading="lazy">
+              <img src="carens.jpg" alt="Kia Carens taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">Premium Family</span>
@@ -570,7 +570,7 @@
 
           <article class="car-card reveal" data-category="premium">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2016%20Toyota%20Fortuner%202.8%20Sigma%204%20%28GUN156R%29%20wagon%20%282018-11-02%29%2001.jpg?width=900" alt="Toyota Fortuner taxi" loading="lazy">
+              <img src="fortuner.jpg" alt="Toyota Fortuner taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">Luxury SUV</span>
@@ -588,7 +588,7 @@
 
           <article class="car-card reveal" data-category="group">
             <div class="car-photo">
-              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Force%20Traveller%203350.jpg?width=900" alt="Tempo Traveller taxi" loading="lazy">
+              <img src="traveller.jpg" alt="Tempo Traveller taxi" loading="lazy">
             </div>
             <div class="car-body">
               <span class="car-tag">Group Travel</span>
@@ -817,7 +817,7 @@
       </div>
 
       <div class="footer-bottom">
-        © 2026 Indore Taxi Service. All rights reserved. Vehicle and destination photographs are representative and served from Wikimedia Commons under their respective licences.
+        © 2026 Indore Taxi Service. All rights reserved. Vehicle photographs are locally stored for reliable loading. Source photos: Wikimedia Commons contributors Biswarup Ganguly, Akashpbrahmavar, Domaxi, Premnath Kudva, Riding Hub, Dairokkan9, DriveSpark and Mr.choppers, under their respective CC/CC0 licences.
       </div>
     </div>
   </footer>
@@ -858,55 +858,55 @@
     const cars = {
       sedan:{
         name:"Sedan / Dzire",price:"₹11/km",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Dzire%20VXi%20VVT%20%28front%29.JPG?width=1200",
+        image:"dzire.jpg",
         desc:"Affordable and comfortable option for couples, small families, airport pickup and outstation travel.",
         features:["Up to 4 passengers","Approximately 3 bags","Air-conditioned car","One-way and round-trip option","Professional driver","Complete fare confirmed before booking"]
       },
       ertiga:{
         name:"Ertiga",price:"₹13/km",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Ertiga%283%29.jpg?width=1200",
+        image:"ertiga.jpg",
         desc:"Spacious family car for religious tours, airport transfer and long-distance journeys.",
         features:["Up to 6+1 passengers","Approximately 4 bags","Air-conditioned car","Comfortable family travel","Professional driver","Complete fare confirmed before booking"]
       },
       innova:{
         name:"Innova",price:"₹17/km",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%202.7V.jpg?width=1200",
+        image:"innova.jpg",
         desc:"Comfortable MUV for family tours, business travel and longer outstation journeys.",
         features:["Up to 6+1 passengers","Approximately 4 bags","Air-conditioned car","Suitable for long journeys","Professional driver","Complete fare confirmed before booking"]
       },
       crysta:{
         name:"Innova Crysta",price:"₹17/km",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Innova%20Crysta%202.4%20Z%20front%20right.jpg?width=1200",
+        image:"crysta.jpg",
         desc:"Premium comfort for family, corporate and long-distance travel.",
         features:["Up to 6+1 passengers","Approximately 4 bags","Air-conditioned car","Premium seating comfort","Professional driver","Complete fare confirmed before booking"]
       },
       wagonr:{
         name:"WagonR / Swift",price:"Call for Price",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Maruti%20Suzuki%20Wagon%20R%20VXi%20%282019%29.jpg?width=1200",
+        image:"wagonr.jpg",
         desc:"Budget-friendly hatchback option for Indore local travel and short journeys.",
         features:["Up to 4 passengers","Approximately 2 bags","Air-conditioned options","Best for local travel","Subject to availability","Fare confirmed before booking"]
       },
       city:{
         name:"Honda City / Ciaz",price:"Call for Price",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20City%20%282021%29%20front.jpg?width=1200",
+        image:"city.jpg",
         desc:"Premium sedan option for corporate guests, airport transfers and comfortable travel.",
         features:["Up to 4 passengers","Approximately 3 bags","Air-conditioned car","Premium sedan comfort","Subject to availability","Fare confirmed before booking"]
       },
       carens:{
         name:"Kia Carens",price:"Call for Price",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Kia%20Carens%20%282022%29%20front.jpg?width=1200",
+        image:"carens.jpg",
         desc:"Premium family MUV with spacious seating for long journeys and group travel.",
         features:["Up to 6+1 passengers","Approximately 4 bags","Air-conditioned car","Comfortable family option","Subject to availability","Fare confirmed before booking"]
       },
       fortuner:{
         name:"Fortuner",price:"Call for Price",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/2016%20Toyota%20Fortuner%202.8%20Sigma%204%20%28GUN156R%29%20wagon%20%282018-11-02%29%2001.jpg?width=1200",
+        image:"fortuner.jpg",
         desc:"Luxury SUV option for premium travel, special guests and long-distance journeys.",
         features:["Up to 6+1 passengers","Premium SUV comfort","Air-conditioned car","Luxury travel option","Subject to availability","Fare confirmed before booking"]
       },
       traveller:{
         name:"Tempo Traveller",price:"Call for Price",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Force%20Traveller%203350.jpg?width=1200",
+        image:"traveller.jpg",
         desc:"Group-travel vehicle for family tours, college groups, religious trips and events.",
         features:["12-seater and 17-seater options","Group luggage space","AC options available","Suitable for tours","Subject to availability","Fare confirmed before booking"]
       }
